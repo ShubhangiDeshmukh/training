@@ -1,5 +1,7 @@
+Iterating Child Pages using Sling Models
+
 <div data-sly-use.pageList="com.adobe.training.core.models.PagesIteratorModel">
-	<ul data-sly-list="${pageList.pagePath.listChildren}">
+	<ul data-sly-list="${pageList.childPage.listChildren}">
 		<li>${item.title}</li>
 	</ul>
 </div>

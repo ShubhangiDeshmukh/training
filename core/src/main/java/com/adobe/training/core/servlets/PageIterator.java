@@ -31,7 +31,6 @@ import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adobe.training.core.models.ChilldPagesIterator;
 import com.day.cq.wcm.api.Page;
 
 import javax.jcr.Node;
