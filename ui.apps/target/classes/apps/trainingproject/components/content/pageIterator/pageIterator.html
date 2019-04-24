@@ -1,0 +1,49 @@
+${properties.parentPath}
+
+  <button id="button_1" value="val_1" name="but1">Click Me</button>
+  <input id="urlpath" type="text" name="access_token" value="${properties.parentPath}" />
+  
+  <div data-sly-use.pageList="com.adobe.training.core.models.ChilldPagesIterator">
+    <ul data-sly-list.child="${pageList.getChildPage}">
+      <li>${child.title}</li>
+    </ul>
+  </div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+    var pagePathValue = $('#urlpath').val();
+    $.ajax({
+        type: "GET",
+        url: "/bin/pageIterator",
+        data: 'pagePathValue=' + pagePathValue,
+        success: function(result) {
+            alert('ok');
+        },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});
+
+/*$("button").click(function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "/bin/pageIterator",
+        data: 'pagePathValue=' + pagePathValue,
+        success: function(result) {
+            alert('ok');
+        },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});*/
+</script>
